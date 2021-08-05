@@ -1,0 +1,672 @@
+﻿body {
+}
+
+h1{
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center !important;
+    letter-spacing: 2px;
+    font-size: 80px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h1::before,h1::after{
+    width: 220px;
+    height: 1px;
+    border: 4px double white;
+    content: "";
+    display: block;
+    margin: 20px auto;
+}
+
+
+header{
+    height: calc(100% - 65px);
+    
+    
+    -webkit-appearance: none;
+
+
+    perspective: 1500px;
+    perspective-origin: center bottom;
+    
+}
+
+.hero {
+    position: relative;
+    background: #333 url(../../images/BackGround/project_back.jpg) no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    transform-origin: 50% 100%;
+    transform-style: preserve-3d;
+    justify-content: center;
+}
+    .hero h1 {
+        text-align: center;
+        color: #fff;
+        font-family: 'Frank Ruehl CLM BoldOblique';
+        background: rgba(0,0,0,.5);
+        position: absolute;
+        left: 50%;
+        top:30%;
+        transform: translate(-50%);
+        
+    }
+
+.hero .overlay{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+   /* background: linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); 
+   */
+}
+
+
+nav{
+    background: #000a1d;
+    height: 65px;
+    
+
+}
+hr{
+    height: 1px;
+    background: rgba(0,0,255,1);
+    animation: hrline 3s infinite;
+}
+@keyframes hrline{
+    0%,100%{
+        background: rgba(0,0,255,1);
+       margin-left: 0;
+       margin-right: 0;
+    }
+    50% {
+        background: rgba(0,0,255,0.7);
+        margin-left: 90%;
+        margin-right: 90%;
+    }
+}
+
+nav.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.sticky-wrapper{
+    height: 65px;
+   
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  
+}
+
+nav ul li{
+    display: inline-block;
+    color: #fff;
+    transition: 0.4s ease;
+}
+nav ul li:hover{
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+
+nav ul a{
+    height: 65px;
+    line-height: 65px;
+    padding: 10px 15px;
+    color: #ccc;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.learnone{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:20;
+    background: #fff;
+}
+
+section {
+    height: 700px;
+    width: 100%;
+    display: table;
+}
+        section #item1 {
+            
+            font-family: serif;
+            
+          
+        }
+
+    section #item2 {
+        background: url(../../images/BackGround/project_back1.jpg);
+        background-size: cover;
+        font-family: serif;
+        
+    }
+
+
+
+.learn_about{
+    grid-area: learn_about;
+    margin-right: 50px;
+    width: 100%;
+    margin-top: 70px;
+
+}
+.learn_img{
+    grid-area: learn_img;
+   background-image: url(../../images/BackGround/robo.jpeg);
+   background-size:450px 450px;
+   background-repeat:no-repeat;
+  height: 450px;
+   grid-area: learn_img;
+}
+
+
+
+.learnone-cover {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "learn_img learn_about";
+   width: 100%;
+   height: 100%;
+    margin-top: 50px;
+    
+}
+.learnone_cover {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "lo_mobile_img lo_mobile_img";
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.about-title {
+    color: #000a1d;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+  
+}
+.about-text {
+    word-wrap: normal;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    color: white;
+    background: #000a1d;
+    border-radius: 25px;
+    padding: 40px;
+}
+.about-title sub {
+    margin-left: -25px;
+    color: red;
+    font-family: 'Frank Ruehl CLM BoldOblique';
+}
+
+.try_me a {
+    color: white;
+    text-decoration: none;
+}
+.try_me_taxi a{
+    color: white;
+    text-decoration: none;
+}
+.try_me_kfc a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.try_me {
+    margin-top: 40px;
+    text-align: center;
+    background: #000a1d;
+    color: white;
+    width: 130px;
+    margin-left: 40%;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    
+}
+.try_me_taxi {
+    margin-top: 40px;
+    text-align: center;
+    background: #ff6a00;
+    color: white;
+    width: 130px;
+    margin-left: 40%;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.try_me_kfc {
+    margin-top: 40px;
+    text-align: center;
+    background: #ff6a00;
+    color: white;
+    width: 130px;
+    margin-left: 40%;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+
+@keyframes trybtn{
+    0%, 100%{
+        transform: scale(1.1);
+    }
+    50%{
+        transform: scale(0.8);
+    }
+}
+@keyframes textstyle{
+    0%{
+        transform: rotate(10deg) scale(1.1);
+        
+    }
+
+
+    50%{
+        transform: rotate(-10deg) scale(0.9);
+    }
+
+    100% {
+        
+        transform: rotate(10deg) scale(1.1);
+    }
+}
+
+
+.try_me:hover {
+    background: #fff;
+    border: 2px solid #000a1d;
+    color: #000a1d;
+    font-weight: bold;
+    animation: trybtn 0.6s infinite;
+}
+    .try_me:hover a {
+        color: #000a1d;
+    }
+.try_me_taxi:hover {
+    background: #fff;
+    border: 2px solid #ff6a00;
+    color: #000a1d;
+    font-weight: bold;
+    animation: trybtn 0.6s infinite;
+}
+    .try_me_taxi:hover a {
+        color: #000a1d;
+    }
+
+
+.try_me_kfc:hover {
+    background: #fff;
+    border: 2px solid #ff6a00;
+    color: #000a1d;
+    font-weight: bold;
+    animation: trybtn 0.6s infinite;
+}
+.try_me_kfc:hover a {
+    color: red;
+}
+
+
+    .taxi-img {
+        background: url(../../images/Projects/TaxiHandler.png);
+        background-size: 300px 600px;
+        background-repeat: no-repeat;
+        width: 1fr;
+        height: 600px;
+        grid-area: taxi-img;
+        margin-left: 80px;
+        margin-top: 60px;
+    }
+
+.taxi {
+    margin-top: 60px;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "taxi_about taxi-img";
+}
+.taxi_about{
+    grid-area: taxi_about;
+}
+
+
+.image1 {
+    background: url(../../images/Projects/LearnOne1.png);
+    background-size: 380px auto;
+    background-repeat: no-repeat;
+    margin-left: 20%;
+}
+
+
+.image2 {
+    background: url(../../images/Projects/LearnOne2.png);
+    background-size: 380px auto;
+    background-repeat: no-repeat;
+    margin-left: 20%;
+  
+}
+
+.image3 {
+    background: url(../../images/Projects/LearnOne3.png);
+    background-size: 380px auto;
+    background-repeat: no-repeat;
+    margin-left: 20%;
+}
+.nav_item {
+    color: #000a1d;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+
+.popup_opps{
+    position: fixed;
+    width: 500px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 30%;
+    background: #fff;
+    padding: 23px;
+}
+.popup_opps_img{
+    background: url(/images/opps.png);
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    height: 240px;
+    margin-left: 40px;
+}
+.popup_opps_des{
+    color: #191919;
+    font-size: 22px;
+
+}
+.close_btn{
+    margin-top: 20px;
+    background: #fff;
+    color: red;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+@media screen and (max-width: 480px){
+    .popup_opps{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 581px) {
+    .image1 {
+        margin-left: 5%;
+    }
+
+    .image2 {
+        margin-left: 5%;
+    }
+
+    .image3 {
+        margin-left: 5%;
+    }
+}
+    .lo_mobile_about {
+    grid-area: lo_mobile_about;
+}
+.lo_mobile_img{
+    grid-area: lo_mobile_img;
+    
+}
+.lo_mobile {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "lo_mobile_about lo_mobile_img";
+    
+
+}
+
+.tab{
+    visibility: hidden;
+   width: 60px;
+   height: 60px;
+   position: absolute;
+
+}
+
+.kfc{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 300px;
+}
+
+
+
+    .card1 {
+    background: url(../../images/Projects/KFC1.png);
+    background-size: 300px 500px;
+    width: 300px;
+    height: 500px;
+    grid-area: card1;
+}
+.card2 {
+    background: url(../../images/Projects/KFC2.png);
+    background-size: 300px 500px;
+    width: 300px;
+    height: 500px;
+    grid-area: card2;
+}
+.card3 {
+    background: url(../../images/Projects/KFC3.png);
+    background-size: 300px 500px;
+    width: 300px;
+    height: 500px;
+    grid-area: card3;
+}
+.card4 {
+    background: url(../../images/Projects/KFC4.png);
+    background-size: 300px 500px;
+    width: 300px;
+    height: 500px;
+    grid-area: card4;
+}
+
+
+.linked{
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "linked_about linked_img";
+}
+
+.linked_about{
+    grid-area: linked_about;
+    margin-right: 20px;
+}
+.linked_img{
+    grid-area: linked_img;
+}
+
+.link1{
+    background: url(../../images/Projects/linkedIn.JPG);
+    background-size: 700px 500px;
+    background-repeat: no-repeat;
+}
+.link2 {
+    background: url(../../images/Projects/linkedIn1.JPG);
+    background-size: 700px 500px;
+    background-repeat: no-repeat;
+}
+.kfc_about{
+    grid-area: kfc_about;
+    margin-right: 20px;
+}
+.kfc_img{
+    grid-area: kfc_img;
+}
+
+#kfc{
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "kfc_about kfc_img";
+}
+
+
+.close_window{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #191919;
+    clip-path: circle();
+    padding: 15px;
+}
+
+
+
+.footer {
+    background: #000a1d;
+    color: #fff;
+    text-align: center;
+    height: 60px;
+    font-size: 20px;
+   margin-top: 400px;
+}
+
+#taxihandler{
+    height: 60px;
+    width: 60px;
+    background: url(/images/TaxiHandler.png);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    margin-top: 15px;
+    margin-left: 16%;
+    position:  absolute;
+    align-content: center;
+
+}
+.abt {
+    display: flex;
+    margin-left: 60px;
+}
+
+
+@media screenand (max-width: 547px) {
+    #taxihandler {
+        margin-left: 0;
+    }
+    .abt{
+        margin-left: 10px;
+        display: normal;
+    }
+
+}
+    @media screen and (max-width:700px) {
+    ul {
+        display: none;
+    }
+
+    .tab {
+        position: absolute;
+        right: 10px;
+        visibility: visible;
+    }
+
+    nav {
+        background-color: #fff;
+    }
+}
+
+@media screen and (max-width: 970px){
+    .learnone-cover {
+        grid-auto-columns: 1fr;
+        grid-template-areas: "learn_img" "learn_about";
+    }
+    .about-text{
+       
+    }
+    .lo_mobile {
+        margin-top: 50px;
+        grid-auto-columns: 1fr;
+        grid-template-areas: "lo_mobile_about" "lo_mobile_img";
+    }
+    .lo_mobile_img{
+        margin-top: 20px;
+    }
+    .taxi {
+        grid-auto-columns: 1fr;
+        grid-template-areas: "taxi_about""taxi-img";
+    }
+    .linked {
+        grid-auto-columns: 1fr;
+        grid-template-areas: "linked_about" "linked_img";
+    }
+    #kfc {
+        grid-auto-columns: 1fr;
+        grid-template-areas: "kfc_about" "kfc_img";
+    }
+    
+
+}
+
+
+@media screen and (max-width: 400px){
+    .try_me{
+        margin-left: 30%;
+    }
+    .hero h1{
+        font-size: 30px;
+    }
+    .taxi-img{
+        margin-left: 10px;
+    }
+    .try_me_taxi{
+        margin-left: 30%;
+    }
+    .try_me_kfc {
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 445px){
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 972px){
+    #kfc{
+        margin-top: 700px;
+    }
+}
+
+
+

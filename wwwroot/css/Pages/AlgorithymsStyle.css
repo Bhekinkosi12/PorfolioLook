@@ -1,0 +1,31 @@
+﻿body {
+}
+
+
+.nav-unselected {
+    border: 2px solid blue;
+    color: blue;
+    background-color: white;
+    background-size: 0%;
+    transition: 0.6s ease;
+    outline: hidden;
+}
+    .nav-unselected:hover {
+        background-color: blue;
+        background-size: 100%;
+        color: #fff;
+    }
+.nav-selected{
+    background-color: blue;
+    border: 2px solid #fff;
+    color: white;
+    outline: hidden;
+    
+}
+
+.nav-btn{
+    margin-left: 20px;
+    border-radius:15px;
+    
+    
+}

@@ -1,0 +1,56 @@
+﻿<br />
+<br />
+<h3>BubbleSort Algorithym</h3>
+
+
+
+
+<div class="progress mb-2">
+    <div class="progress-bar" role="progressbar" style="width: @((int)progress)%;" aria-valuemin="0"></div>
+</div>
+
+@foreach(var i in ints)
+{
+    <div class="alert alert-info col-@i p-1 " style="background: #191919; color: #fff;">
+        <span>@i</span>
+    </div>
+}
+
+
+
+@code {
+
+
+    List<int> ints;
+    Random rnd;
+    double currentPosition;
+    double progress => (currentPosition / (ints.Count * (ints.Count - 1) / 2)) * 100;
+
+    protected override void OnInitialized()
+    {
+        rnd = new Random();
+        ints = Enumerable.Range(1, 12).OrderBy(s => rnd.NextDouble()).ToList();
+        Sort();
+
+    }
+
+    public async Task Sort()
+    {
+        for(int i = 0; i < ints.Count; i++)
+        {
+            for(int t = i + 1; t < ints.Count; t++)
+            {
+                await Task.Delay(200);
+                if(ints[i] > ints[t])
+                {
+                    int local = ints[i];
+                    ints[i] = ints[t];
+                    ints[t] = local;
+                }
+                currentPosition++;
+                StateHasChanged();
+            }
+        }
+    }
+
+}

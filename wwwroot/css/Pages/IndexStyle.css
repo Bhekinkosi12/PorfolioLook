@@ -1,0 +1,320 @@
+﻿body {
+  overflow-y: auto;
+}
+
+.index_body {
+    margin: 0;
+    height: auto;
+    
+    display: grid;
+
+    justify-content: center;
+    align-content: center;
+    perspective: 100px;
+}
+.link{
+    text-decoration: none;
+    
+}
+
+main{
+    border-radius: 10px;
+    
+    margin: 100px 30px 30px 30px;
+    width: 100%;
+    background-color: rgba(255,255,255,.4);
+    border: 1px solid white;
+    margin: 50px 0 0 0;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: 0.4s;
+    position:relative;
+    padding: 30px;
+   
+}
+
+.front_name{
+    color: #191919;
+    font-size: 4rem;
+    font-family:'Frank Ruehl CLM MediumOblique';
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.front-about {
+    color: #303030;
+    font-size: 25px;
+    font-family: 'Frank Ruehl CLM MediumOblique';
+    text-align: center;
+}
+
+.title{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.project-wrapper{
+    margin-top: 100px;
+    
+    z-index: 10;
+}
+
+.project-title {
+    display: flex;
+    margin: 0 80px 0 80px;
+    justify-content: space-evenly;
+    z-index: 10;
+}
+.social{
+    display: flex;
+    background: rgba(255, 255, 255,0.5);
+    margin-left: 45%;
+    margin-top: 30px;
+    width: 100px;
+    border-radius: 20px;
+}
+.personal{
+    text-align: center;
+    font-weight: bold;
+}
+
+.project-card{
+    width: 200px;
+    height: 180px;
+   background: rgba(255,255,255,.3);
+   border-radius:20px;
+   cursor: pointer;
+   z-index: 10;
+   margin-top: 30px;
+   animation: cards 1.7s linear infinite;
+}
+
+.project-card-description{
+    margin-top: 17px;
+    color: #191919;
+
+}
+@keyframes cards {
+    0%,100%{
+        transform: scale(1.1);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
+
+.icon{
+    align-content: center;
+    
+    
+}
+
+
+.p1 {
+    text-align: center;
+   
+   
+}
+.p2 {
+    text-align: center;
+    padding-top: 10px;
+}
+.p3 {
+    background-image: url(../../images/animation.jpg);
+    background-size: 200px 200px;
+}
+
+.project-card-name {
+    color: white;
+    text-align: center;
+    font-size: 19px;
+    position: relative;
+    height: 0%;
+    font-size: 27px;
+    visibility: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 20px;
+    transition: 0.4s ease-in;
+    animation: animawords 2.7s ease-in-out infinite;
+}
+.p1:hover .project-card-name {
+    visibility: visible;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    padding-top: 37%;
+    
+}
+.p2:hover .project-card-name {
+    visibility: visible;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    padding-top: 37%;
+}
+.p3:hover .project-card-name {
+    visibility: visible;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    padding-top: 37%;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px){
+    .project-title{
+        display: grid;
+        grid-auto-columns: 1fr 1fr;
+        grid-template-areas: "p1 p2" "p3 p3";
+        margin-top: 30px;
+        
+    }
+    .p1{
+        grid-area: p1;
+
+    }
+    .p2{
+        grid-area: p2;
+    }
+    .p3{
+        grid-area: p3;
+        margin-left: 26%;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:637px){
+
+    .project-title {
+        display: grid;
+        grid-auto-columns: 1fr ;
+        grid-template-areas: "p1" "p2" "p3";
+        margin-top: 30px;
+    }
+
+    .p1 {
+        grid-area: p1;
+        margin-left: 26%;
+        margin-top: 20px;
+    }
+
+    .p2 {
+        grid-area: p2;
+        margin-left: 26%;
+        margin-top: 20px;
+    }
+
+    .p3 {
+        grid-area: p3;
+        margin-left: 26%;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .project-title {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-areas: "p1" "p2" "p3";
+        margin-top: 30px;
+    }
+
+    .p1 {
+        grid-area: p1;
+        margin-left: 15%;
+        margin-top: 20px;
+    }
+
+    .p2 {
+        grid-area: p2;
+        margin-left: 15%;
+        margin-top: 20px;
+    }
+
+    .p3 {
+        grid-area: p3;
+        margin-left: 15%;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+.object {
+    width: 70px;
+    height: 70px;
+    background: url(/images/testimonial/01.png);
+    background-size: 70px 70px;
+   
+    bottom: 50px;
+    right: 70%;
+   position: fixed;
+    
+    z-index: -1;
+    animation: objectss 3.7s infinite;
+}
+.object1 {
+    width: 70px;
+    height: 70px;
+    background: url(/images/testimonial/05.png);
+    background-size: 70px 70px;
+    top: 60px;
+    right: 50px;
+   position: fixed;
+    z-index: -1;
+    animation: objectss 4.7s infinite;
+  
+}
+.object2 {
+    width: 70px;
+    height: 70px;
+    background: url(/images/testimonial/03.png);
+    background-size: 70px 70px;
+    top: 60%;
+    right: 30%;
+    position: fixed;
+    z-index: -1;
+    animation: objectss 5s infinite;
+}
+.object3 {
+    width: 70px;
+    height: 70px;
+    background: url(/images/testimonial/06.png);
+    background-size: 70px 70px;
+    top: 60px;
+    left: 50px;
+    position: fixed;
+    z-index: -1;
+    animation: objectss 4.5s infinite;
+}
+
+
+.index_cover{
+    background: url(/images/section/18.jpg);
+    background-size: cover;
+    
+}
+
+@keyframes objectss{
+    0%,100%{
+        transform: rotate(100deg) scale(1.1);
+        
+    }
+    25% {
+        transform: scale(1);
+    }
+    50%{
+        transform: rotate(50deg) scale(1.1);
+    }
+    75% {
+        transform: scale(1);
+    }
+   
+}

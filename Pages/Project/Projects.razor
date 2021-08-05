@@ -1,0 +1,479 @@
+﻿@page "/projects"
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+@inject IJSRuntime _JSRuntime
+@inject NavigationManager _NavigationManager
+
+
+
+
+<header id="home" class="animate__animated animate__bounce">
+    <div class="hero">
+        <div class="overlay"></div>
+        <h1>Personal Projects</h1>
+    </div>
+
+</header>
+
+
+
+<div class="sticky-wrapper">
+    <nav>
+        <ul>
+            <li ><a @onclick="@ToggleOpen" >LearnOne</a> </li>
+            <li><a @onclick="@ToggleOpen">LearnOne Mobile</a></li>
+            <li @onclick="@ToggleOpen"><a>Taxi Handler </a></li>
+            <li><a @onclick="@ToggleOpen">KFC</a></li>
+            <li><a @onclick="@ToggleOpen">LinkedIn</a></li>
+        </ul>
+
+        <div class="tab">
+
+            <MudBlazor.MudIconButton Icon="@Icons.Outlined.Menu" @onclick="(() => OpenDrawer(Anchor.Bottom))"></MudBlazor.MudIconButton>
+        </div>
+    </nav>
+
+</div>
+
+
+
+
+
+
+<section id="item1" class="animate__animated animate__bounce ">
+
+
+
+    <div class="learnone-cover" id="learnone">
+
+        <div class="learn_img">
+
+
+        </div>
+
+        <div class="learn_about">
+            <div class="about-title">
+                Learn One <sub>1</sub>
+            </div>
+
+            <div class="about-text">
+
+                Based on giving easy access to schooling materials for FET students at low cost <br />
+                Students in rural places share textbooks and studyguides, during these times most of them are not able to continue with their studies thats where LearnOne comes is.
+
+            </div>
+            <div>
+
+                <div class="try_me">
+
+                    <a href="https://learnonestudio.azurewebsites.net/">
+
+                        Try Me
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+
+<hr />
+
+<section id="item2" style="margin-top: 50px"  data-wow-delay="0.5s">
+
+
+    <div class="lo_mobile" id="learnonem">
+        <div class="lo_mobile_about">
+            <div class="about-title">
+                Learn One <sub>1</sub>
+                <br />
+                Mobile
+            </div>
+
+            <div class="about-text" style="background: #0000ff;">
+
+                Based on giving easy access to schooling materials for FET students at low cost <br />
+                A mobile vesion of the LearnOne app bringing the tool closer to the hand.
+
+            </div>
+            <div>
+
+                <div class="try_me" style="background-color: #0000ff;">
+
+                    <a href="~/raw/LearnOne.apk">
+
+                        Download app
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="lo_mobile_img">
+            <MudCarousel Style="height:700px; width: 100%;" ShowArrows="@arrows" ShowDelimiters="@delimiters" AutoCycle="@autocycle" TData="object">
+                <MudCarouselItem Transition="transition">
+                    <div class="image1" style="height:100%">
+
+                    </div>
+
+                </MudCarouselItem>
+                <MudCarouselItem Transition="transition">
+                    <div class="image2" style="height:100%">
+
+                    </div>
+                </MudCarouselItem>
+                <MudCarouselItem Transition="transition">
+                    <div class="image3" style="height:100%">
+
+                    </div>
+                </MudCarouselItem>
+            </MudCarousel>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!--
+    <MudSelect @bind-Value="transition" Label="Transition" Class="ma-2">
+        <MudSelectItem Value="@Transition.Fade">Fade</MudSelectItem>
+        <MudSelectItem Value="@Transition.Slide">Slide</MudSelectItem>
+        <MudSelectItem Value="@Transition.None">None</MudSelectItem>
+    </MudSelect>
+    <MudSwitch @bind-Checked="@arrows" Color="Color.Primary">Show Arrows</MudSwitch>
+    <MudSwitch @bind-Checked="@delimiters" Color="Color.Primary">Show Delimiters</MudSwitch>
+    <MudSwitch @bind-Checked="@autocycle" Color="Color.Primary">Auto Cycle (Default: 5 secs)</MudSwitch>
+    -->
+</section>
+<hr />
+
+<section class="item3" id="taxi">
+    <div class="taxi">
+
+        <div class="taxi_about">
+            <div class="about-title"  style="color: orange; ">
+                
+                 Taxi Handler
+
+            </div>
+
+            <div class="about-text" style="color: orange">
+               
+                Saying goodbye to the fear of counting money in mini-taxis.<br />
+                A local solution that assists with counting money with ease.
+            </div>
+            <div>
+
+                <div class="try_me_taxi">
+
+                    <a href="~/raw/TaxiHandler1.apk">
+
+                        Download app
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="taxi-img">
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</section>
+<hr />
+
+
+<section id="linked" class="linked" style="margin: 50px 20px 0px 20px;  ">
+
+    <div class="linked_about">
+
+        <div class="about-title">
+            LinkedIn
+        </div>
+
+        <div class="about-text">
+
+            A personal expirience on diving more into Asp dotnet MCV. <br />
+            Projects sets a template to a proper linkedIn platform with A database.
+            <br />
+            Pushing to the text the migration of using javascript to using razor pages within the dotnet space.
+            <br />
+            The task took 3days to reach its point of state and will be undergo a huge change apointing to the set schedule.
+        </div>
+
+        <div class="try_me">
+
+            <a href="https://github.com/Bhekinkosi12/LinkedIn">
+
+                See code
+            </a>
+        </div>
+    </div>
+
+    <div class="linked_img">
+        <MudCarousel Style="height:700px; width: 100%;" ShowArrows="@arrows" ShowDelimiters="@delimiters" AutoCycle="@autocycle" TData="object">
+            <MudCarouselItem Transition="transition">
+                <div class="link1" style="height:100%">
+
+                </div>
+
+            </MudCarouselItem>
+            <MudCarouselItem Transition="transition">
+                <div class="link2" style="height:100%">
+
+                </div>
+            </MudCarouselItem>
+
+        </MudCarousel>
+
+    </div>
+
+
+
+
+
+</section>
+<hr />
+
+<section id="kfc">
+
+
+    <div class="kfc_about">
+
+        <div class="about-title" style="color: red">
+            KFC
+
+        </div>
+
+        <div class="about-text" style="color: red">
+
+            A native mobile clone of the kfc webpage which runs on both Android and Ios.
+            The product was built to improve the knowledge of using frequently updating databases.
+        </div>
+        <div>
+
+            <div class="try_me_taxi" style="background-color: red;">
+
+                <a href="https://github.com/Bhekinkosi12/LinkedIn">
+
+                    See code
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="kfc_img">
+
+        <MudCarousel Style="height:700px; width: 100%;" ShowArrows="false" ShowDelimiters="@delimiters" AutoCycle="@autocycle" TData="object">
+            <MudCarouselItem Transition="transition">
+                <div class="card1">
+
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem Transition="Transition.Slide">
+                <div class="card2">
+
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem Transition="transition">
+                <div class="card3">
+
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem Transition="Transition.Slide">
+                <div class="card4">
+
+                </div>
+            </MudCarouselItem>
+        </MudCarousel>
+
+
+
+
+
+
+    </div>
+
+</section>
+
+
+<div class="footer">
+    For more visit my github page <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Secondary" Link="https://github.com/Bhekinkosi12"></MudIconButton> Or email <MudIconButton Icon="@Icons.Filled.Email" Color="Color.Secondary" Link="ndumiso5154kk@gmail.com"></MudIconButton>
+</div>
+
+
+
+
+
+
+
+<MudScrollToTop ScrollBehavior="ScrollBehavior.Smooth">
+    <MudFab Color="Color.Primary" Icon="@Icons.Filled.ArrowCircleUp" />
+</MudScrollToTop>
+
+<MudDrawer @bind-Open="@open" Anchor="@anchor" Elevation="1" Variant="@DrawerVariant.Temporary" Style="position: fixed;">
+    <MudDrawerHeader>
+        <MudText Typo="@Typo.h6" Style="color: #000a1d; font-weight: bold; text-align: center;">Projects</MudText>
+    </MudDrawerHeader>
+    <MudNavMenu>
+        <MudNavLink Match="NavLinkMatch.All" OnClick="ToggleOpen" Class="nav_item">LearnOne</MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" OnClick="ToggleOpen" Class="nav_item">LearnOne Mobile</MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" OnClick="ToggleOpen" Class="nav_item">Taxi Handler</MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" OnClick="ToggleOpen" Class="nav_item">KFC</MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" OnClick="ToggleOpen" Class="nav_item">LinkedIn</MudNavLink>
+    </MudNavMenu>
+
+
+</MudDrawer>
+
+
+<div class="popup_opps" style="visibility: @_isOpen">
+    <div class="popup_opps_img">
+
+    </div>
+    <div class="popup_opps_des">
+        Opps Feature On Experimental
+    </div>
+    <div class="close_btn" @onclick="@ToggleOpen">
+        OK
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="object">
+
+</div>
+<div class="object1">
+
+</div>
+<div class="object2">
+
+</div>
+<div class="object3">
+
+</div>
+
+
+
+
+@code{
+    private bool arrows = true;
+    private bool delimiters = false;
+    private bool autocycle = true;
+    private Transition transition = Transition.Fade;
+
+
+    bool open;
+    Anchor anchor;
+
+    void OpenDrawer(Anchor anchor)
+    {
+        open = true;
+        this.anchor = anchor;
+    }
+
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    private async void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        await ScrollToFragment();
+    }
+
+
+
+
+    private async Task ScrollToFragment()
+    {
+        var uri = new Uri(NavigationManager.Uri, UriKind.Absolute);
+        var fragment = uri.Fragment;
+
+        if (fragment.StartsWith('#'))
+        {
+
+            var elementId = fragment.Substring(1);
+            var index = elementId.IndexOf(":~:", StringComparison.Ordinal);
+            if (index > 0)
+            {
+                elementId = elementId.Substring(0, index);
+
+            }
+
+            if (!string.IsNullOrEmpty(elementId))
+            {
+                await JSRuntime.InvokeVoidAsync("BlazorScrollToId", elementId);
+            }
+
+        }
+    }
+
+
+
+    public static class Extention
+    {
+        public static ValueTask NavigateToFragmentAsync(NavigationManager navigationManager, IJSRuntime jSRuntime)
+        {
+
+            var uri = navigationManager.ToAbsoluteUri(navigationManager.Uri);
+            if (uri.Fragment.Length == 0)
+                return default;
+
+            return jSRuntime.InvokeVoidAsync("blazorHelpers.scrollToFragment", uri.Fragment.Substring(1));
+
+        }
+
+
+    }
+
+
+    public string _isOpen { get; set; } = "hidden";
+
+    public void ToggleOpen()
+    {
+        if (_isOpen == "hidden")
+            _isOpen = "visible";
+        else
+            _isOpen = "hidden";
+    }
+
+
+
+
+}

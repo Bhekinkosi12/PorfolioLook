@@ -1,0 +1,168 @@
+﻿@page "/"
+@using System.Timers
+
+
+
+<div style="  padding-bottom: 40px;" class="index_cover">
+
+
+    <div class="index_body">
+        <main class="main_" style="@css"
+              @onpointermove='p => Change(p, "move")'
+              @onpointerover='p => { Change(p, "in"); animate = false; timer.Stop(); timer.Start(); }'
+              @onpointerout='p => Change(p, "out")'>
+
+
+            <div class="front_name">
+                Bhekinkosi Kubheka
+            </div>
+
+            <div class="front-about">
+                A Self-taught Full stack web and mobile developer. <br />
+                Deployed applications heavily under Asp .net and xamarin native Android and Ios.
+
+            </div>
+
+
+
+
+
+        </main>
+
+        <div class="social">
+            <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Dark" Link="https://www.linkedin.com/in/bhekinkosi-elijih-63992b1ba/" Style="width: 50px; height: 50px;"></MudIconButton>
+            <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Link="https://github.com/Bhekinkosi12" ></MudIconButton>
+
+
+        </div>
+        <div class="personal">
+            (+27) 71308 3615 <br />
+            <a href="ndumiso5154kk@gmail.com">
+
+            ndumiso5154kk@gmail.com
+            </a>
+        </div>
+
+
+
+
+    </div>
+
+
+<div class="project-wrapper" >
+
+  
+
+
+
+    <div class="project-title">
+        <NavLink href="algos" class="link">
+            <div class="project-card p1">
+
+                <!--
+        <div class="project-card-name" >
+            Algorithyms
+        </div>
+            -->
+                <MudIconButton Icon="@Icons.Filled.Code" Color="Color.Secondary" Link="algos" Class="icon"></MudIconButton>
+
+                <br />
+                <div class="project-card-description">
+
+                Click to See Visualiszed Algorithyms
+                </div>
+
+            </div>
+        </NavLink>
+            <NavLink href="projects" class="link">
+                <div class="project-card p2">
+                    <!--
+    <div class="project-card-name">
+        Project
+    </div>
+    -->
+                    <MudIcon Icon="@Icons.Filled.Pages" Color="Color.Secondary" Class="icon"></MudIcon>
+                    <br />
+                    <div class="project-card-description">
+
+
+                        Click to see the demos of personal projects
+                        </div>
+                    </div>
+</NavLink>
+        
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="object">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+@code{
+    string css;
+    bool animate;
+    Timer timer;
+
+    public void Change(PointerEventArgs args, string method)
+    {
+        css = (method, animate) switch
+        {
+            ("out", _) => TransformToCss(0, 0) + "transition: 1s",
+            ("in", _) => TransformToCss(GetDegree(args.OffsetX, "x"), GetDegree(args.OffsetY, "y")),
+            ("move", true) => "transition: 0s" + TransformToCss(GetDegree(args.OffsetX, "x"), GetDegree(args.OffsetY, "y")),
+            ("move", false) => TransformToCss(GetDegree(args.OffsetX, "x"), GetDegree(args.OffsetY, "y")),
+            _ => TransformToCss(0, 0),
+
+        };
+
+
+
+    }
+
+
+    protected override void OnInitialized()
+    {
+        timer = new Timer(350);
+        animate = true;
+        timer.AutoReset = false;
+
+        timer.Elapsed += (o, args) => animate = true;
+
+    }
+
+
+
+
+
+
+
+
+
+    public string TransformToCss(double x, double y) => $"transform: rotateY({x}deg) rotateX({y}deg);";
+
+
+    public double GetDegree(double number, string dimension)
+        => dimension switch
+        {
+            "y" => Math.Clamp((number - 250) / 250 * 10, -10, 10),
+            "x" => -Math.Clamp((number - 500) / 500 * 10, -10, 10),
+
+        };
+
+}
