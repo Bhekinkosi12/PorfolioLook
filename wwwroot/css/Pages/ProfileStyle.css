@@ -370,7 +370,30 @@ section {
     margin-left: 20%;
 }
 
-
+.mzansi1 {
+    background: url(../../images/Projects/mzansi3.jpg);
+    background-repeat: no-repeat;
+    margin-left: 20%;
+    background-size: 380px auto;
+}
+.mzansi2 {
+    background: url(../../images/Projects/mzansi4.jpg);
+    background-size: 380px auto;
+    background-repeat: no-repeat;
+    margin-left: 20%;
+}
+.mzansi3 {
+    background: url(../../images/Projects/mzansi1.jpg);
+    background-size: 380px auto;
+    background-repeat: no-repeat;
+    margin-left: 20%;
+}
+.mzansi4 {
+    background: url(../../images/Projects/mzansi2.jpg);
+    background-size: 380px auto;
+    background-repeat: no-repeat;
+    margin-left: 20%;
+}
 .image2 {
     background: url(../../images/Projects/LearnOne2.png);
     background-size: 380px auto;
